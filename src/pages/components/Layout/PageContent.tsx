@@ -17,7 +17,7 @@ const PageContent:React.FC<PageContentProps> = ({children}) => {
                     direction='column' 
                     width={{base:'100%',md:'65%'}}
                     mr={{base:0,md:6}}
-                    border='1px solid grey'
+                    border='1px solid #2F3336'
                     maxWidth='600px'
                 >
                     {children && children[0 as keyof typeof children]}
@@ -27,7 +27,7 @@ const PageContent:React.FC<PageContentProps> = ({children}) => {
                     direction='column' 
                     display={{base:'none',md:'flex'}}
                     flexGrow={1}
-                    border='1px solid grey'
+                    border='1px solid #2F3336'
                     maxWidth='350px'
                 >
                     {children && children[1 as keyof typeof children]}

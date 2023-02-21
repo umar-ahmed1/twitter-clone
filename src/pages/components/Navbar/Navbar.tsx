@@ -152,11 +152,19 @@ const Navbar: React.FC<NavbarProps> = () => {
                 <Flex
                     align='center'
                     cursor='pointer'
-                    _hover={{ bg: 'whiteAlpha.200' }}
                     p='12px'
                     borderRadius='full'
                 >   
-                    <Button flexGrow={1} color='brand.900' bg='brand.100' borderRadius='full' pl={{md:'16px',lg:'32px'}} pr={{md:'16px',lg:'32px'}} height='52px'>
+                    <Button 
+                        flexGrow={1} 
+                        color='brand.900' 
+                        bg='brand.100' 
+                        borderRadius='full' 
+                        pl={{md:'16px',lg:'32px'}} 
+                        pr={{md:'16px',lg:'32px'}} 
+                        height='52px'
+                        _hover={{opacity:'0.9'}}
+                    >
                         <Icon
                             color='brand.900'
                             fontSize={28}

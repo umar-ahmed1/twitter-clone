@@ -13,33 +13,44 @@ const HomeMenu:React.FC<HomeMenuProps> = () => {
             <Flex p='0px 16px' height='53px' align='center'>
                 <Text fontSize='20px' fontWeight={700} color='brand.900'>Home</Text>
             </Flex>
-            <Flex width='100%' align='center' borderBottom='1px solid grey'>
-                <Flex width='50%' justify='center' align='center'>
+            <Flex width='100%' align='center' borderBottom='1px solid #2F3336'>
+                <Flex 
+                    width='50%' 
+                    justify='center' 
+                    align='center' 
+                    _hover={{ bg: 'whiteAlpha.200' }} 
+                    onClick={() => setContentType('For You')} 
+                    cursor='pointer'
+                >
                     <Flex 
                         height='53px'
                         borderBottom={contentType ==='For You' ? '4px solid #1D9BF0' : ''}
                         borderRadius={1}
                         align='center'
-                        cursor='pointer'
-                        onClick={() => setContentType('For You')}
                     >
-                        <Text color='brand.900' fontSize='15px' fontWeight={600}>For You</Text>
+                        <Text color='brand.900' fontSize='15px' fontWeight={600}>For you</Text>
                     </Flex>
                 </Flex>
-                <Flex width='50%' justify='center' align='center'>
+                <Flex 
+                    width='50%' 
+                    justify='center' 
+                    align='center' 
+                    _hover={{ bg: 'whiteAlpha.200' }} 
+                    onClick={() => setContentType('Following')} 
+                    cursor='pointer'
+                >
                     <Flex 
                         height='53px' 
                         borderBottom={contentType ==='Following' ? '4px solid #1D9BF0' : ''}
                         borderRadius={1}
-                        align='center'
-                        cursor='pointer'
-                        onClick={() => setContentType('Following')}
+                        align='center'   
                     >
                         <Text color='brand.900' fontSize='15px' fontWeight={600}>Following</Text>
                     </Flex>
                 </Flex>
             </Flex>
         </Flex>
+
     )
 }
 export default HomeMenu;
