@@ -16,7 +16,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
     return (
         <Flex maxWidth='31%' justify='flex-end' height='1000px' flexGrow={1}>
-            <Stack direction='column' spacing={2} p={3} >
+            <Stack direction='column' spacing={2} p={3} position='fixed'>
                 <Flex
                     align='center'
                     cursor='pointer'
