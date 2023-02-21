@@ -15,8 +15,8 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = () => {
 
     return (
-        <Flex width='31%' justify='flex-end' height='1000px'>
-            <Stack direction='column' spacing={2} p={3} width='45%'>
+        <Flex maxWidth='31%' justify='flex-end' height='1000px' flexGrow={1}>
+            <Stack direction='column' spacing={2} p={3} >
                 <Flex
                     align='center'
                     cursor='pointer'
@@ -156,16 +156,15 @@ const Navbar: React.FC<NavbarProps> = () => {
                     p='12px'
                     borderRadius='full'
                 >   
-                    <Flex display={{sm:'flex', md:'none',lg:'none'}}>
+                    <Button flexGrow={1} color='brand.900' bg='brand.100' borderRadius='full' pl={{md:'16px',lg:'32px'}} pr={{md:'16px',lg:'32px'}} height='52px'>
                         <Icon
                             color='brand.900'
                             fontSize={28}
                             as={HiOutlineDotsCircleHorizontal}
                             mr={2}
+                            display={{sm:'flex', md:'flex',lg:'none'}}
                         />
-                    </Flex>
-                    <Button flexGrow={1} color='brand.900' bg='brand.100' borderRadius='full' pl='32px' pr='32px' height='52px'>
-                        Tweet
+                        <Text display={{sm:'none',md:'none',lg:'unset'}}>Tweet</Text>
                     </Button>  
                 </Flex>
                 

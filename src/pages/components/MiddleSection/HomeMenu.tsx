@@ -8,7 +8,7 @@ type HomeMenuProps = {
 const HomeMenu:React.FC<HomeMenuProps> = () => {
     
     return (
-        <Flex direction='column' width='600px'>
+        <Flex direction='column' width='100%'>
             <Flex>
                 <Text color='brand.900'>Home</Text>
             </Flex>
