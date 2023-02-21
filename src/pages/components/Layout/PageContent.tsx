@@ -9,7 +9,7 @@ type PageContentProps = {
 const PageContent:React.FC<PageContentProps> = ({children}) => {
     //the children are the LHS and RHS react fragments
     return (
-        <Flex justify='center' padding='16px 0px' width='100%'>
+        <Flex justify='center' width='100%'>
             <Navbar/>
             <Flex width='69%' justify='flex-start'>
                 {/*LHS*/}

@@ -7,14 +7,11 @@ import HomeMenu from './components/MiddleSection/HomeMenu'
 export default function Home() {
   return (
       <PageContent>
-        <Flex>
+        <Flex direction='column'>
           <HomeMenu/>
           <CreateTweet/>
         </Flex>
         <>
-          <Flex>
-
-          </Flex>
         </>
       </PageContent>
   )
