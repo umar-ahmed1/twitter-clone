@@ -1,111 +1,177 @@
-import { Flex, Stack, Icon,Text} from '@chakra-ui/react';
+import { Flex, Stack, Icon, Text, Button } from '@chakra-ui/react';
 import React from 'react';
-import {BiHomeCircle} from 'react-icons/bi'
-import {FaHashtag} from 'react-icons/fa'
-import {IoIosNotificationsOutline} from 'react-icons/io'
-import {AiOutlineMail} from 'react-icons/ai'
-import {BsBookmark,BsPerson} from 'react-icons/bs'
-import {HiOutlineDotsCircleHorizontal} from 'react-icons/hi'
+import { BiHomeCircle } from 'react-icons/bi'
+import { FaHashtag } from 'react-icons/fa'
+import { IoIosNotificationsOutline } from 'react-icons/io'
+import { AiOutlineMail } from 'react-icons/ai'
+import { BsBookmark, BsPerson } from 'react-icons/bs'
+import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
+import {SlSocialTwitter} from 'react-icons/sl'
+
 type NavbarProps = {
-    
+
 };
 
-const Navbar:React.FC<NavbarProps> = () => {
-    
+const Navbar: React.FC<NavbarProps> = () => {
+
     return (
-        <Stack direction='column' spacing={3} p={5} width='20%'>
-            <Flex 
-                align='center' 
-                cursor='pointer'
-                _hover={{bg:'whiteAlpha.200' }}
-            >
-                <Icon 
-                    color='brand.900' 
-                    fontSize={24}
-                    as={BiHomeCircle}
-                    mr={2}
-                />
-                <Text color='brand.900' fontWeight={600}>Home</Text>
-            </Flex>
-            <Flex 
-                align='center' 
-                cursor='pointer'
-                _hover={{bg:'whiteAlpha.200' }}
-            >
-                <Icon 
-                    color='brand.900' 
-                    fontSize={24}
-                    as={FaHashtag}
-                    mr={2}
-                />
-                <Text color='brand.900' fontWeight={600}>Explore</Text>
-            </Flex>
-            <Flex 
-                align='center' 
-                cursor='pointer'
-                _hover={{bg:'whiteAlpha.200' }}
-            >
-                <Icon 
-                    color='brand.900' 
-                    fontSize={24}
-                    as={IoIosNotificationsOutline}
-                    mr={2}
-                />
-                <Text color='brand.900' fontWeight={600}>Notifications</Text>
-            </Flex>
-            <Flex 
-                align='center' 
-                cursor='pointer'
-                _hover={{bg:'whiteAlpha.200' }}
-            >
-                <Icon 
-                    color='brand.900' 
-                    fontSize={24}
-                    as={AiOutlineMail}
-                    mr={2}
-                />
-                <Text color='brand.900' fontWeight={600}>Messages</Text>
-            </Flex>
-            <Flex 
-                align='center' 
-                cursor='pointer'
-                _hover={{bg:'whiteAlpha.200' }}
-            >
-                <Icon 
-                    color='brand.900' 
-                    fontSize={24}
-                    as={BsBookmark}
-                    mr={2}
-                />
-                <Text color='brand.900' fontWeight={600}>Bookmarks</Text>
-            </Flex>
-            <Flex 
-                align='center' 
-                cursor='pointer'
-                _hover={{bg:'whiteAlpha.200' }}
-            >
-                <Icon 
-                    color='brand.900' 
-                    fontSize={24}
-                    as={BsPerson}
-                    mr={2}
-                />
-                <Text color='brand.900' fontWeight={600}>Profile</Text>
-            </Flex>
-            <Flex 
-                align='center' 
-                cursor='pointer'
-                _hover={{bg:'whiteAlpha.200' }}
-            >
-                <Icon 
-                    color='brand.900' 
-                    fontSize={24}
-                    as={HiOutlineDotsCircleHorizontal}
-                    mr={2}
-                />
-                <Text color='brand.900' fontWeight={600}>More</Text>
-            </Flex>
-        </Stack>
+        <Flex width='31%' justify='flex-end' height='1000px'>
+            <Stack direction='column' spacing={2} p={3} width='45%'>
+                <Flex
+                    align='center'
+                    cursor='pointer'
+                    width='100%'
+                    p='12px'
+                    _hover={{ bg: 'whiteAlpha.200' }}
+                    borderRadius='full'
+                >
+                    <Icon as={SlSocialTwitter} fontSize={28} color='brand.900'/>
+                </Flex>
+                
+                <Flex
+                    align='center'
+                    cursor='pointer'
+                    width='100%'
+                    p='12px'
+                    _hover={{ bg: 'whiteAlpha.200' }}
+                    borderRadius='full'
+                >
+
+                    <Icon
+                        color='brand.900'
+                        fontSize={28}
+                        as={BiHomeCircle}
+                        mr={2}
+                    />
+                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                        <Text fontSize='20px'color='brand.900'>Home</Text>
+                    </Flex>     
+                </Flex>
+                <Flex
+                    align='center'
+                    cursor='pointer'
+                    _hover={{ bg: 'whiteAlpha.200' }}
+                    p='12px'
+                    borderRadius='full'
+                >
+                    <Icon
+                        color='brand.900'
+                        fontSize={28}
+                        as={FaHashtag}
+                        mr={2}
+                    />
+                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                        <Text fontSize='20px'color='brand.900'>Explore</Text>
+                    </Flex>     
+                </Flex>
+                <Flex
+                    align='center'
+                    cursor='pointer'
+                    _hover={{ bg: 'whiteAlpha.200' }}
+                    p='12px'
+                    borderRadius='full'
+                >
+                    <Icon
+                        color='brand.900'
+                        fontSize={28}
+                        as={IoIosNotificationsOutline}
+                        mr={2}
+                    />
+                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                        <Text fontSize='20px'color='brand.900'>Notifications</Text>
+                    </Flex>   
+                </Flex>
+                <Flex
+                    align='center'
+                    cursor='pointer'
+                    _hover={{ bg: 'whiteAlpha.200' }}
+                    p='12px'
+                    borderRadius='full'
+                >
+                    <Icon
+                        color='brand.900'
+                        fontSize={28}
+                        as={AiOutlineMail}
+                        mr={2}
+                    />
+                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                        <Text fontSize='20px'color='brand.900'>Messages</Text>
+                    </Flex>   
+                </Flex>
+                <Flex
+                    align='center'
+                    cursor='pointer'
+                    _hover={{ bg: 'whiteAlpha.200' }}
+                    p='12px'
+                    borderRadius='full'
+                >
+                    <Icon
+                        color='brand.900'
+                        fontSize={28}
+                        as={BsBookmark}
+                        mr={2}
+                    />
+                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                        <Text fontSize='20px'color='brand.900'>Bookmarks</Text>
+                    </Flex>   
+                </Flex>
+                <Flex
+                    align='center'
+                    cursor='pointer'
+                    _hover={{ bg: 'whiteAlpha.200' }}
+                    p='12px'
+                    borderRadius='full'
+                >
+                    <Icon
+                        color='brand.900'
+                        fontSize={28}
+                        as={BsPerson}
+                        mr={2}
+                    />
+                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                        <Text fontSize='20px'color='brand.900'>Profile</Text>
+                    </Flex>   
+                </Flex>
+                <Flex
+                    align='center'
+                    cursor='pointer'
+                    _hover={{ bg: 'whiteAlpha.200' }}
+                    p='12px'
+                    borderRadius='full'
+                >
+                    <Icon
+                        color='brand.900'
+                        fontSize={28}
+                        as={HiOutlineDotsCircleHorizontal}
+                        mr={2}
+                    />
+                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                        <Text fontSize='20px'color='brand.900'>More</Text>
+                    </Flex>   
+                </Flex>
+                <Flex
+                    align='center'
+                    cursor='pointer'
+                    _hover={{ bg: 'whiteAlpha.200' }}
+                    p='12px'
+                    borderRadius='full'
+                >   
+                    <Flex display={{sm:'flex', md:'none',lg:'none'}}>
+                        <Icon
+                            color='brand.900'
+                            fontSize={28}
+                            as={HiOutlineDotsCircleHorizontal}
+                            mr={2}
+                        />
+                    </Flex>
+                    <Button flexGrow={1} color='brand.900' bg='brand.100' borderRadius='full' pl='32px' pr='32px' height='52px'>
+                        Tweet
+                    </Button>  
+                </Flex>
+                
+            </Stack>
+        </Flex>
+
     )
 }
 export default Navbar;

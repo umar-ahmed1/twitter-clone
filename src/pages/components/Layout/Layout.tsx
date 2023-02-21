@@ -1,3 +1,4 @@
+import { Flex } from '@chakra-ui/react';
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 
@@ -7,9 +8,13 @@ type LayoutProps = {
 
 const Layout:React.FC<LayoutProps> = ({children}) => {
     return (
-        <>
+        <>  
+        <Flex>
             <Navbar/>
-            <main>{children}</main>
+            <main>
+                {children}
+            </main>
+        </Flex> 
         </>
     )
 }

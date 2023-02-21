@@ -1,10 +1,21 @@
 import { Flex, Text} from '@chakra-ui/react'
 import React from 'react'
+import PageContent from './components/Layout/PageContent'
+import CreateTweet from './components/CreateTweet/CreateTweet'
+import HomeMenu from './components/CreateTweet/HomeMenu'
 
 export default function Home() {
   return (
-      <Flex>
-        <Text color='brand.900'>Hello</Text>
-      </Flex>
+      <PageContent>
+        <>
+          <HomeMenu/>
+          <CreateTweet/>
+        </>
+        <>
+          <Flex width='600px'>
+
+          </Flex>
+        </>
+      </PageContent>
   )
 }
