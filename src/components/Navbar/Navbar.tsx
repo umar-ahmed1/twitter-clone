@@ -43,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                         as={BiHomeCircle}
                         mr={2}
                     />
-                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                    <Flex display={{base:'none',lg:'flex'}}>
                         <Text fontSize='20px'color='brand.900'>Home</Text>
                     </Flex>     
                 </Flex>
@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                         as={FaHashtag}
                         mr={2}
                     />
-                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                    <Flex display={{base:'none',lg:'flex'}}>
                         <Text fontSize='20px'color='brand.900'>Explore</Text>
                     </Flex>     
                 </Flex>
@@ -77,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                         as={IoIosNotificationsOutline}
                         mr={2}
                     />
-                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                    <Flex display={{base:'none',lg:'flex'}}>
                         <Text fontSize='20px'color='brand.900'>Notifications</Text>
                     </Flex>   
                 </Flex>
@@ -94,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                         as={AiOutlineMail}
                         mr={2}
                     />
-                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                    <Flex display={{base:'none',lg:'flex'}}>
                         <Text fontSize='20px'color='brand.900'>Messages</Text>
                     </Flex>   
                 </Flex>
@@ -111,7 +111,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                         as={BsBookmark}
                         mr={2}
                     />
-                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                    <Flex display={{base:'none',lg:'flex'}}>
                         <Text fontSize='20px'color='brand.900'>Bookmarks</Text>
                     </Flex>   
                 </Flex>
@@ -128,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                         as={BsPerson}
                         mr={2}
                     />
-                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                    <Flex display={{base:'none',lg:'flex'}}>
                         <Text fontSize='20px'color='brand.900'>Profile</Text>
                     </Flex>   
                 </Flex>
@@ -145,7 +145,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                         as={HiOutlineDotsCircleHorizontal}
                         mr={2}
                     />
-                    <Flex display={{sm:'none', md:'none',lg:'flex'}}>
+                    <Flex display={{base:'none',lg:'flex'}}>
                         <Text fontSize='20px'color='brand.900'>More</Text>
                     </Flex>   
                 </Flex>
@@ -170,9 +170,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                             fontSize={28}
                             as={HiOutlineDotsCircleHorizontal}
                             mr={2}
-                            display={{sm:'flex', md:'flex',lg:'none'}}
+                            display={{base:'flex',lg:'none'}}
                         />
-                        <Text display={{sm:'none',md:'none',lg:'unset'}}>Tweet</Text>
+                        <Text display={{base:'none',lg:'unset'}}>Tweet</Text>
                     </Button>  
                 </Flex>
                 

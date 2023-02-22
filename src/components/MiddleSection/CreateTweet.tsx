@@ -13,7 +13,7 @@ const CreateTweet:React.FC<HomeProps> = () => {
     const [tweetText,setTweetText] = React.useState('') 
     
     return (
-        <Flex height='120px' width='100%' borderBottom='1px solid #2F3336' pt='4px'>
+        <Flex height='120px' width='100%' borderBottom='1px solid #2F3336' pt='4px' display={{base:'none',sm:'flex'}}>
             <Flex pl='16px' pr='16px' width='100%'>
                 <Flex pt='4px' mr='12px'>
                     <Icon as={AiOutlineUser} fontSize={48} color='brand.900' cursor='pointer' _hover={{opacity:'0.9'}}/>
