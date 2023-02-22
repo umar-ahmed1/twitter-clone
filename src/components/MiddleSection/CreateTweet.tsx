@@ -2,7 +2,7 @@ import { Flex, Stack, Text, Icon, Input, Button } from '@chakra-ui/react';
 import React from 'react';
 import {AiOutlineUser, AiOutlinePicture, AiOutlineSchedule} from 'react-icons/ai'
 import {HiOutlineGif} from 'react-icons/hi2'
-import {CiCircleList, CiLocationOn} from 'react-icons/ci'
+import {GoLocation} from 'react-icons/go'
 import {BsEmojiSmile} from 'react-icons/bs'
 
 type HomeProps = {
@@ -55,7 +55,7 @@ const CreateTweet:React.FC<HomeProps> = () => {
                             />
                             <Icon 
                                 color='brand.100' 
-                                as={CiCircleList} 
+                                as={GoLocation} 
                                 fontSize={20} 
                                 cursor='pointer'
                                 _hover={{bgColor:'blue.800'}}
@@ -79,7 +79,7 @@ const CreateTweet:React.FC<HomeProps> = () => {
                             />
                             <Icon 
                                 color='brand.100' 
-                                as={CiLocationOn} 
+                                as={GoLocation} 
                                 fontSize={20} 
                                 cursor='pointer'
                                 _hover={{bgColor:'blue.800'}}

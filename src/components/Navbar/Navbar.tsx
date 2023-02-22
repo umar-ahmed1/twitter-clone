@@ -15,7 +15,7 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = () => {
 
     return (
-        <Flex maxWidth='31%' justify='flex-end' height='1000px' flexGrow={1}>
+        <Flex maxWidth='31%' justify='flex-end' height='1000px' flexGrow={1} display={{base:'none',sm:'flex'}}>
             <Stack direction='column' spacing={2} p={3} position='fixed'>
                 <Flex
                     align='center'

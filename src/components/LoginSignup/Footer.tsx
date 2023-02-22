@@ -1,6 +1,8 @@
 import { Button, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
+import { authState } from '../atoms/authAtom';
 import AuthModal from './AuthModal';
+import {useRecoilState} from 'recoil'
 
 type FooterProps = {
     
@@ -8,6 +10,7 @@ type FooterProps = {
 
 const Footer:React.FC<FooterProps> = () => {
     const [isOpen,setIsOpen] = React.useState()
+    const [modalState,setModalState] = useRecoilState(authState)
 
     return (
         <Flex width='100%' bgColor='brand.100' height='72px' position='fixed' justify='center' bottom={0}>
@@ -22,9 +25,31 @@ const Footer:React.FC<FooterProps> = () => {
                         <Text fontSize='23px' fontWeight={600} color='white'>Don't miss what's happening</Text>
                         <Text fontSize='15px' color='white'>People on Twitter are the first to know.</Text>
                     </Flex>
-                    <Flex flexGrow={1} maxWidth={{base:'100%',md:'200px'}}>
-                        <Button width='50%'>Log in</Button>
-                        <Button width='50%'>Sign up</Button>  
+                    <Flex flexGrow={1} maxWidth={{base:'100%',md:'200px'}} align='center'>
+                        <Button 
+                            height='34px' 
+                            width='50%' 
+                            mr={2} 
+                            borderRadius='full' 
+                            border='1px solid white' 
+                            background='brand.100' 
+                            color='white'
+                            _hover={{opacity:'0.8'}}
+                            onClick={() => setModalState({
+                                open:true,
+                                view:'login'
+                            })}
+                        >Log in</Button>
+                        <Button 
+                            height='34px' 
+                            width='50%' 
+                            borderRadius='full' 
+                            _hover={{opacity:'0.8'}}
+                            onClick={() => setModalState({
+                                open:true,
+                                view:'signup'
+                            })}
+                        >Sign up</Button>  
                     </Flex>           
                 </Flex>
             </Flex>
