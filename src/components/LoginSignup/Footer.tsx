@@ -3,6 +3,8 @@ import React from 'react';
 import { authState } from '../atoms/authAtom';
 import AuthModal from './AuthModal';
 import {useRecoilState} from 'recoil'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '@/firebase/clientApp';
 
 type FooterProps = {
     
