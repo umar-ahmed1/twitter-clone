@@ -11,7 +11,7 @@ const PageContent:React.FC<PageContentProps> = ({children}) => {
     return (
         <Flex justify='center' width='100%'>
             <Navbar/>
-            <Flex width='69%' justify='flex-start'>
+            <Flex width={{base:'100%',sm:'69%'}} justify='flex-start'>
                 {/*LHS*/}
                 <Flex 
                     direction='column' 

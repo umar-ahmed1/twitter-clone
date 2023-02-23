@@ -9,9 +9,11 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 
 const GoogleButton:React.FC = () => {
+    //React firebase hook
     const [signInWithGoogle,userCredentials,loading,error]= useSignInWithGoogle(auth)
 
     //take the user from signinwithgoogle and create a document in the collections with all the user data
+    //we use setDoc because if theres alrdy a doc there then we dont want to make a new one
     const createUser = async (user: User) => {
         const userDocRef = doc(firestore,'users',user.uid)
         await setDoc(userDocRef, user)

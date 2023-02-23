@@ -20,7 +20,7 @@ const Footer:React.FC<FooterProps> = () => {
                 <Flex 
                     maxWidth='275px' 
                     flexGrow={1}
-                    display={{md:'none',lg:'flex'}}
+                    display={{base:'none',lg:'flex'}}
                 ></Flex>
                 <Flex justify='space-between' align='center' flexGrow={1}>
                     <Flex align='flex-start' direction='column' display={{base:'none',md:'flex'}}>
