@@ -3,20 +3,25 @@ import React from 'react';
 import { BiHomeCircle } from 'react-icons/bi'
 import { FaHashtag } from 'react-icons/fa'
 import { IoIosNotificationsOutline } from 'react-icons/io'
-import { AiOutlineMail } from 'react-icons/ai'
-import { BsBookmark, BsPerson } from 'react-icons/bs'
+import { AiOutlineMail,AiOutlineUser } from 'react-icons/ai'
+import { BsBookmark, BsPerson,BsThreeDots } from 'react-icons/bs'
 import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
 import {SlSocialTwitter} from 'react-icons/sl'
+import { auth } from '@/firebase/clientApp';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import UserMenu from './UserMenu';
 
 type NavbarProps = {
 
 };
 
 const Navbar: React.FC<NavbarProps> = () => {
+    const [user] = useAuthState(auth)
+    console.log(user)
 
     return (
         <Flex maxWidth='31%' justify='flex-end' height='1000px' flexGrow={1} display={{base:'none',sm:'flex'}}>
-            <Stack direction='column' spacing={2} p={3} position='fixed'>
+            <Stack direction='column' spacing={2} pt={3} pl={3} pb={3} pr={{base:0,lg:6}}  mr={{base:0,lg:6}} position='fixed' justify='space-between'>
                 <Flex
                     align='center'
                     cursor='pointer'
@@ -160,8 +165,8 @@ const Navbar: React.FC<NavbarProps> = () => {
                         color='brand.900' 
                         bg='brand.100' 
                         borderRadius='full' 
-                        pl={{md:'16px',lg:'32px'}} 
-                        pr={{md:'16px',lg:'32px'}} 
+                        pl={{sm:'6px', md:'12px',lg:'32px'}} 
+                        pr={{sm:'6px', md:'12px',lg:'32px'}} 
                         height='52px'
                         _hover={{opacity:'0.9'}}
                     >
@@ -175,7 +180,8 @@ const Navbar: React.FC<NavbarProps> = () => {
                         <Text display={{base:'none',lg:'unset'}}>Tweet</Text>
                     </Button>  
                 </Flex>
-                
+                    {user && <UserMenu user={user}/>}
+                    
             </Stack>
         </Flex>
 
