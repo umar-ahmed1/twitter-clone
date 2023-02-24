@@ -10,6 +10,8 @@ import {SlSocialTwitter} from 'react-icons/sl'
 import { auth } from '@/firebase/clientApp';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import UserMenu from './UserMenu';
+import { useRecoilState } from 'recoil';
+import { authModalState } from '../atoms/authAtom';
 
 type NavbarProps = {
 
@@ -17,7 +19,7 @@ type NavbarProps = {
 
 const Navbar: React.FC<NavbarProps> = () => {
     const [user] = useAuthState(auth)
-    console.log(user)
+    const [modalState,setModalState] = useRecoilState(authModalState)
 
     return (
         <Flex maxWidth='31%' justify='flex-end' height='1000px' flexGrow={1} display={{base:'none',sm:'flex'}}>

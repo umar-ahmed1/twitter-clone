@@ -2,16 +2,16 @@ import { auth } from '@/firebase/clientApp';
 import { Menu, MenuButton,Text, Button, MenuList, MenuItem, Flex, Icon } from '@chakra-ui/react';
 import { signOut, User } from 'firebase/auth';
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineUser } from 'react-icons/ai';
 import { BsThreeDots } from 'react-icons/bs';
+import { useRecoilState } from 'recoil';
+import { authModalState } from '../atoms/authAtom';
 
 type UserMenuProps = {
     user?: User
 };
 
 const UserMenu: React.FC<UserMenuProps> = ({user}) => {
-    
     const logout = async () => {
         await signOut(auth)
     }

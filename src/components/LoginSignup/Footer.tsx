@@ -1,16 +1,26 @@
 import { Button, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
-import { authState } from '../atoms/authAtom';
+import { authModalState } from '../atoms/authAtom';
 import AuthModal from './AuthModal';
-import {useRecoilState} from 'recoil'
+import {useSetRecoilState} from 'recoil'
+
 
 type FooterProps = {
     
 };
 
 const Footer:React.FC<FooterProps> = () => {
-    const [isOpen,setIsOpen] = React.useState()
-    const [modalState,setModalState] = useRecoilState(authState)
+    const setModalState = useSetRecoilState(authModalState)
+
+    //When the footer dismounts we want to set the modal state to false
+    React.useEffect(() => {
+        return () => {
+            setModalState(prev => ({
+                ...prev,
+                open:false
+            }))
+        }
+    },[])
 
     return (
         <Flex width='100%' bgColor='brand.100' height='72px' position='fixed' justify='center' bottom={0}>

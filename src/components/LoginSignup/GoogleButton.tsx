@@ -1,9 +1,11 @@
 import { auth, firestore } from '@/firebase/clientApp';
 import { Flex, Button, Image, Text } from '@chakra-ui/react';
 import { User } from 'firebase/auth';
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import {doc, setDoc } from 'firebase/firestore';
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSetRecoilState } from 'recoil';
+import { authModalState } from '../atoms/authAtom';
 
 
 
@@ -11,6 +13,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 const GoogleButton:React.FC = () => {
     //React firebase hook
     const [signInWithGoogle,userCredentials,loading,error]= useSignInWithGoogle(auth)
+    const setModalState = useSetRecoilState(authModalState)
 
     //take the user from signinwithgoogle and create a document in the collections with all the user data
     //we use setDoc because if theres alrdy a doc there then we dont want to make a new one
@@ -22,7 +25,12 @@ const GoogleButton:React.FC = () => {
     //everytime usercredentials change from signinwithgoogle then run create user
     React.useEffect(() => {
         if(userCredentials){
+            setModalState((prev) => ({
+                ...prev,
+                open:false,
+            }))
             createUser(JSON.parse(JSON.stringify(userCredentials.user)))
+            
         }
 
     },[userCredentials])
