@@ -15,6 +15,7 @@ const AuthModal: React.FC<AuthModalProps> = () => {
     const [modalState,setModalState] = useRecoilState(authModalState)
     const [user] = useAuthState(auth)
 
+    //function to set the modal state to close
     const handleClose = () => {
         setModalState(prev => ({
             ...prev,

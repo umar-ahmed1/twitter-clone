@@ -63,7 +63,6 @@ const Footer:React.FC<FooterProps> = () => {
                     </Flex>           
                 </Flex>
             </Flex>
-            <AuthModal />
         </Flex>
     )
 }

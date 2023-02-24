@@ -12,6 +12,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import UserMenu from './UserMenu';
 import { useRecoilState } from 'recoil';
 import { authModalState } from '../atoms/authAtom';
+import AuthModal from '../LoginSignup/AuthModal';
 
 type NavbarProps = {
 
@@ -183,7 +184,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     </Button>  
                 </Flex>
                     {user && <UserMenu user={user}/>}
-                    
+                <AuthModal />
             </Stack>
         </Flex>
 
