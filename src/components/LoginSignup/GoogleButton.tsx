@@ -37,8 +37,8 @@ const GoogleButton:React.FC = () => {
 
 
     return (
-        <Flex direction="column" width="100%" mb={4}>
-            <Button bg='white' mb={2} isLoading={loading} borderRadius='full' onClick={() => signInWithGoogle()}>
+        <Flex direction="column" width="100%" mb={1}>
+            <Button bg='white' isLoading={loading} borderRadius='full' onClick={() => signInWithGoogle()}>
                 <Text mr={4}>Continue with Google</Text>
                 <Image height="20px" src="/images/googlelogo.png" ></Image>
             </Button>
