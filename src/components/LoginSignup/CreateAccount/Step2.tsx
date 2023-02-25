@@ -5,14 +5,14 @@ import { doc, getDoc, setDoc } from 'firebase/firestore';
 import React from 'react';
 import { UserDetails } from './CreateAccount';
 
-type Step1Props = {
+type Step2Props = {
     step:number,
     setStep: React.Dispatch<React.SetStateAction<number>>,
     signUpForm: UserDetails,
     setSignUpForm: React.Dispatch<React.SetStateAction<UserDetails>>
 };
 
-const Step2:React.FC<Step1Props> = ({step,setStep,signUpForm,setSignUpForm}) => {
+const Step2:React.FC<Step2Props> = ({step,setStep,signUpForm,setSignUpForm}) => {
 
     const handleSubmit = async () => {
         try{
@@ -25,10 +25,9 @@ const Step2:React.FC<Step1Props> = ({step,setStep,signUpForm,setSignUpForm}) => 
             } 
             //else create the document and increment step by 1 
             else {
-                setDoc(userRef,signUpForm)
+                //setDoc(userRef,signUpForm)
                 setStep(step + 1)
             }
-            
 
 
         }catch(error:any){
