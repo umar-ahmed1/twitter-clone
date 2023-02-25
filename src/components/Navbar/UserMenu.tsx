@@ -6,8 +6,6 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineUser } from 'react-icons/ai';
 import { BsThreeDots } from 'react-icons/bs';
-import { useRecoilState } from 'recoil';
-import { authModalState } from '../atoms/authAtom';
 
 type UserMenuProps = {
     user?: User
@@ -16,8 +14,9 @@ type UserMenuProps = {
 
 
 
-const UserMenu: React.FC<UserMenuProps> = ({user}) => {
+const UserMenu: React.FC<UserMenuProps> = () => {
     const [identifier,setIdentifier] = React.useState('')
+    const [user] = useAuthState(auth)
 
     const logout = async () => {
         await signOut(auth)
@@ -40,7 +39,7 @@ const UserMenu: React.FC<UserMenuProps> = ({user}) => {
         if(user){
             getUserIdentifier()
         }
-    },[user,identifier])
+    },[user,identifier,getUserIdentifier()])
 
     return (
         <Menu placement='top'>
