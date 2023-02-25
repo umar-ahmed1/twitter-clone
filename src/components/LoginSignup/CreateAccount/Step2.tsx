@@ -12,7 +12,7 @@ type Step1Props = {
     setSignUpForm: React.Dispatch<React.SetStateAction<UserDetails>>
 };
 
-const Step1:React.FC<Step1Props> = ({step,setStep,signUpForm,setSignUpForm}) => {
+const Step2:React.FC<Step1Props> = ({step,setStep,signUpForm,setSignUpForm}) => {
 
     const handleSubmit = async () => {
         try{
@@ -72,4 +72,4 @@ const Step1:React.FC<Step1Props> = ({step,setStep,signUpForm,setSignUpForm}) => 
             </>  
     )
 }
-export default Step1;
+export default Step2;
