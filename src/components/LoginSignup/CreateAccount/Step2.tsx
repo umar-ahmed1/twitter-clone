@@ -1,5 +1,5 @@
 import { firestore } from '@/firebase/clientApp';
-import { Flex, Input, Stack, Select, Button,Text, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { Flex, Input, Stack, Select, Button,Text, InputGroup, InputLeftElement, Alert, AlertIcon } from '@chakra-ui/react';
 import { User } from 'firebase/auth';
 import { collection, doc, Firestore, getDoc, getDocs, query, setDoc, where } from 'firebase/firestore';
 import React from 'react';
@@ -14,9 +14,11 @@ type Step2Props = {
 
 const Step2:React.FC<Step2Props> = ({step,setStep,signUpForm,setSignUpForm}) => {
     const [loading,setLoading] = React.useState(false)
+    const [errorMessage,setErrorMessage] = React.useState('')
 
     const handleSubmit = async () => {
         setLoading(true)
+        setErrorMessage('')
         try{
             //get all the users with the same identifier as the one in the form
             const userQuery = query(collection(firestore,'users'),
@@ -26,7 +28,7 @@ const Step2:React.FC<Step2Props> = ({step,setStep,signUpForm,setSignUpForm}) => 
             const users = userDoc.docs.map((doc) => ({id: doc.id,...doc.data()}))
             //if there are any users with the same identifier then the users.length will be greater than 0 so that means we should return
             if (users.length > 0){
-                console.log('user already exists')
+                setErrorMessage('Username is taken')
             } 
             //else increment step by 1 because the username is valid
             else {
@@ -48,7 +50,7 @@ const Step2:React.FC<Step2Props> = ({step,setStep,signUpForm,setSignUpForm}) => 
             <Text fontSize='15px' color='brand.700' mb={3}>
                 {'Your @username is unique. You can always change it later.'}
             </Text>
-            <InputGroup width='100%' pl='10px' mb={10}>
+            <InputGroup width='100%' pl='10px' mb={3}>
                 <InputLeftElement pointerEvents='none' color='brand.100' fontSize='20px' fontWeight={600} left={0} children='@' ml='16px' mt='5px'></InputLeftElement>
                 <Input 
                     type='text' 
@@ -68,7 +70,13 @@ const Step2:React.FC<Step2Props> = ({step,setStep,signUpForm,setSignUpForm}) => 
                     }))}}
                 ></Input>
             </InputGroup>
-                <Button isLoading={loading} width='100%' bg='white' mb={4}  borderRadius='full' onClick={handleSubmit}>
+            {errorMessage && (
+                <Alert status='error'>
+                    <AlertIcon />
+                    {errorMessage}
+                </Alert>
+                )}
+                <Button isLoading={loading} width='100%' bg='white' mb={4} mt={7}  borderRadius='full' onClick={handleSubmit}>
                     <Text mr={4}>Next</Text>
                 </Button>
             </>  

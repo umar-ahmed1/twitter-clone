@@ -11,10 +11,9 @@ type Step4Props = {
 };
 
 const Step4:React.FC<Step4Props> = ({step,setStep,signUpForm,setSignUpForm}) => {
-    const [password,setPassword] = React.useState('')
-    const [confirmPassword,setConfirmPassword] = React.useState('')
-    
+    const [error,setError] = React.useState('')
     const handleSubmit = () => {
+        setError('')
         setStep(step + 1)
     }
 
