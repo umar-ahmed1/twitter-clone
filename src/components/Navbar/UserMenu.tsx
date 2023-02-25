@@ -16,7 +16,9 @@ type UserMenuProps = {
 
 const UserMenu: React.FC<UserMenuProps> = () => {
     const [identifier,setIdentifier] = React.useState('')
+    const [displayName,setDisplayName] = React.useState('')
     const [user] = useAuthState(auth)
+    console.log(user)
 
     const logout = async () => {
         await signOut(auth)
@@ -29,6 +31,7 @@ const UserMenu: React.FC<UserMenuProps> = () => {
             const userDoc = await getDoc(userRef)
             const data = userDoc.data()
             setIdentifier(data?.identifier)
+            setDisplayName(data?.displayName)
         } catch(error:any){
             console.log('getUserIdentifier error',error.message)
         }
@@ -57,7 +60,7 @@ const UserMenu: React.FC<UserMenuProps> = () => {
                     <Flex mr={4}>
                         <Icon as={AiOutlineUser} fontSize={40} mr={1} color='brand.900'/>
                         <Flex direction='column' align='flex-start' display={{base:'none',lg:'flex'}}>
-                            <Text fontWeight={600} fontSize='15px' color='brand.900'>{user?.displayName || user?.email?.split('@')[0]}</Text>
+                            <Text fontWeight={600} fontSize='15px' color='brand.900'>{displayName || user?.email?.split('@')[0]}</Text>
                             <Text color='brand.700' fontSize='15px'>@{identifier || user?.email?.split('@')[0]}</Text> 
                         </Flex>
                     </Flex>
