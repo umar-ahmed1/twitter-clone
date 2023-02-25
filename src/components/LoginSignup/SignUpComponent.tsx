@@ -1,5 +1,7 @@
+import { auth } from '@/firebase/clientApp';
 import { Button, Flex, Text,Image } from '@chakra-ui/react';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRecoilState } from 'recoil';
 import { authModalState } from '../atoms/authAtom';
 import GoogleButton from './GoogleButton';

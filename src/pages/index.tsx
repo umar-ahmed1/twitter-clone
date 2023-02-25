@@ -18,7 +18,7 @@ export default function Home() {
         <CreateTweet/>
       </Flex>
       <>
-      <SignUpComponent/>
+      {!user && <SignUpComponent/>}
       </>
     </PageContent>
     {!user && <Footer/>}
