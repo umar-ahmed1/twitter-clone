@@ -32,7 +32,7 @@ const AuthModal: React.FC<AuthModalProps> = () => {
 
 
     return (
-        <Modal isOpen={modalState.open} onClose={handleClose} size='xl' variant='dark'>
+        <Modal isOpen={modalState.open} onClose={handleClose} size='2xl' variant='dark'>
             <ModalOverlay bg='whiteAlpha.100'/>
             <ModalContent top='4.5rem'>
                 <ModalHeader bg='black' height='268px'>
