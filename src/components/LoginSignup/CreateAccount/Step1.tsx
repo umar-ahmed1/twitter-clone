@@ -13,8 +13,9 @@ type Step1Props = {
 const Step1:React.FC<Step1Props> = ({step,setStep,signUpForm,setSignUpForm}) => {
     
     const handleSubmit = () => {
-        console.log(signUpForm)
-        setStep(step + 1)
+        if(signUpForm.email !== '' && signUpForm.displayName !== ''){
+            setStep(step + 1)
+        }     
     }
 
     return (

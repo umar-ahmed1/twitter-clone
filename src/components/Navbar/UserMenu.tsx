@@ -3,6 +3,7 @@ import { Menu, MenuButton,Text, Button, MenuList, MenuItem, Flex, Icon } from '@
 import { signOut, User } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineUser } from 'react-icons/ai';
 import { BsThreeDots } from 'react-icons/bs';
 import { useRecoilState } from 'recoil';
@@ -39,7 +40,7 @@ const UserMenu: React.FC<UserMenuProps> = ({user}) => {
         if(user){
             getUserIdentifier()
         }
-    },[user])
+    },[user,identifier])
 
     return (
         <Menu placement='top'>
