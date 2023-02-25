@@ -1,7 +1,7 @@
 import { firestore } from '@/firebase/clientApp';
 import { Flex, Input, Stack, Select, Button,Text, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import { User } from 'firebase/auth';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { collection, doc, Firestore, getDoc, getDocs, query, setDoc, where } from 'firebase/firestore';
 import React from 'react';
 import { UserDetails } from './CreateAccount';
 
@@ -13,19 +13,23 @@ type Step2Props = {
 };
 
 const Step2:React.FC<Step2Props> = ({step,setStep,signUpForm,setSignUpForm}) => {
+    const [loading,setLoading] = React.useState(false)
 
     const handleSubmit = async () => {
+        setLoading(true)
         try{
-            //Create a reference to the firebase doc of the username given and get the document
-            const userRef = doc(firestore,'users',signUpForm.username)
-            const userDoc = await getDoc(userRef)
-            //if taken display that its taken and suggest usernames
-            if (userDoc.exists()){
+            //get all the users with the same identifier as the one in the form
+            const userQuery = query(collection(firestore,'users'),
+                where('identifier','==',signUpForm.identifier)
+            )
+            const userDoc = await getDocs(userQuery)
+            const users = userDoc.docs.map((doc) => ({id: doc.id,...doc.data()}))
+            //if there are any users with the same identifier then the users.length will be greater than 0 so that means we should return
+            if (users.length > 0){
                 console.log('user already exists')
             } 
-            //else create the document and increment step by 1 
+            //else increment step by 1 because the username is valid
             else {
-                //setDoc(userRef,signUpForm)
                 setStep(step + 1)
             }
 
@@ -33,8 +37,7 @@ const Step2:React.FC<Step2Props> = ({step,setStep,signUpForm,setSignUpForm}) => 
         }catch(error:any){
             console.log('createUser error',error.message)
         }
-
-            
+        setLoading(false)
     }
 
     return (
@@ -58,14 +61,14 @@ const Step2:React.FC<Step2Props> = ({step,setStep,signUpForm,setSignUpForm}) => 
                     borderColor='brand.700'
                     _placeholder={{color:'brand.700'}}
                     _focus={{boxShadow:'none'}}
-                    value={signUpForm.username}
+                    value={signUpForm.identifier}
                     onChange={(event) => {setSignUpForm(prev => ({
                         ...prev,
-                        username:event.target.value
+                        identifier:event.target.value
                     }))}}
                 ></Input>
             </InputGroup>
-                <Button width='100%' bg='white' mb={4}  borderRadius='full' onClick={handleSubmit}>
+                <Button isLoading={loading} width='100%' bg='white' mb={4}  borderRadius='full' onClick={handleSubmit}>
                     <Text mr={4}>Next</Text>
                 </Button>
             </>  

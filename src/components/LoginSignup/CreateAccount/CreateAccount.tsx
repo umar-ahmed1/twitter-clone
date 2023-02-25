@@ -11,7 +11,7 @@ type CreateAccountProps = {
 
 export type UserDetails = {
     displayName:string,
-    username:string,
+    identifier:string,
     email:string,
     birthMonth:string,
     birthDay:string,
@@ -23,7 +23,7 @@ const CreateAccount:React.FC<CreateAccountProps> = () => {
     const [step,setStep] = React.useState(1)
     const [signUpForm,setSignUpForm] = React.useState({
         displayName:'',
-        username:'',
+        identifier:'',
         email:'',
         birthMonth:'',
         birthDay:'',

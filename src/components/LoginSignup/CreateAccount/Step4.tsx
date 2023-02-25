@@ -30,6 +30,7 @@ const Step4:React.FC<Step4Props> = ({step,setStep,signUpForm,setSignUpForm}) => 
         //set the document with data from the hook
         await setDoc(userRef,user)
         //add all the data that we have collected
+        console.log(signUpForm)
         await updateDoc(userRef,signUpForm)
     }
 
