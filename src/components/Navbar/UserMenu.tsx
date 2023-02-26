@@ -18,7 +18,6 @@ const UserMenu: React.FC<UserMenuProps> = () => {
     const [identifier,setIdentifier] = React.useState('')
     const [displayName,setDisplayName] = React.useState('')
     const [user] = useAuthState(auth)
-    console.log(user)
 
     const logout = async () => {
         await signOut(auth)
