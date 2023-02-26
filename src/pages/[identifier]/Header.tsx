@@ -22,7 +22,7 @@ const Header:React.FC<HeaderProps> = ({userData}) => {
                     </Flex>
                 </Flex>
                 <Flex direction='column' justify='flex-start'>
-                    <Text fontWeight={600} color='brand.900' fontSize='20px'>{userData.displayName}</Text>
+                    <Text fontWeight={600} color='brand.900' fontSize='20px'>{userData?.displayName}</Text>
                     <Text color='brand.700' fontSize='13px'>50k Tweets </Text>
                 </Flex> 
             </Flex>
