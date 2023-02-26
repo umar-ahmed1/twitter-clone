@@ -32,7 +32,7 @@ const CreateAccount:React.FC<CreateAccountProps> = () => {
     } as UserDetails)
     
     return (
-        <Flex width='100%' align='center' justify='center' backgroundColor='black' direction='column' pl='5px' pr='5px'>
+        <Flex width='100%' align='center' justify='center' backgroundColor='black' direction='column'>
             <Text fontWeight={600} color='brand.900'>Step {step} of 4</Text>
             {step === 1 && (<Step1 step={step} setStep = {setStep} signUpForm={signUpForm} setSignUpForm={setSignUpForm}/>)}
             {step === 2 && (<Step2 step={step} setStep = {setStep} signUpForm={signUpForm} setSignUpForm={setSignUpForm}/>)}

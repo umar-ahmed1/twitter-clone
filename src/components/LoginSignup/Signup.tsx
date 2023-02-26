@@ -11,7 +11,7 @@ type SignupProps = {
 const Signup:React.FC<SignupProps> = () => {
     const [modalState,setModalState] = useRecoilState(authModalState)
     return (
-        <Flex width='100%' align='center' justify='center' backgroundColor='black' direction='column' pl='16px' pr='16px'>
+        <Flex width='100%' align='center' justify='center' backgroundColor='black' direction='column'>
             <Text fontSize='31px' color='brand.900' fontWeight={600} mb={3}>
                 {'Join Twitter today'}
             </Text>

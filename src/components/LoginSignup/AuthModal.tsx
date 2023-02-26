@@ -32,16 +32,16 @@ const AuthModal: React.FC<AuthModalProps> = () => {
 
 
     return (
-        <Modal isOpen={modalState.open} onClose={handleClose} size='2xl' variant='dark'>
+        <Modal isOpen={modalState.open} onClose={handleClose} size={{base:'full',md:'2xl'}} variant='dark'>
             <ModalOverlay bg='whiteAlpha.100'/>
-            <ModalContent top='4.5rem'>
+            <ModalContent top={{base:'0rem',md:'4.5rem'}}>
                 <ModalHeader bg='black' height='268px'>
                     <Flex width='100%' align='center' justify='center' backgroundColor='black' direction='column'>
                         <Icon as={BsTwitter} fontSize='31px' color='brand.900'/>
                     </Flex>  
                 </ModalHeader>
                 <ModalCloseButton color='brand.900'/>
-                <ModalBody bg='black' pl='122px' pr='122px'>
+                <ModalBody bg='black'>
                     <AuthInputs/>
                 </ModalBody>
             </ModalContent>

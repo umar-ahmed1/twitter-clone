@@ -17,7 +17,7 @@ const Login: React.FC<LoginProps> = () => {
     }
 
     return (
-        <Flex width='100%' align='center' justify='center' backgroundColor='black' direction='column' pl='32px' pr='32px'>
+        <Flex width='100%' align='center' justify='center' backgroundColor='black' direction='column'>
             <Text fontSize='31px' color='brand.900' fontWeight={600} mb={3}>
                 {'Sign in to Twitter'}
             </Text>

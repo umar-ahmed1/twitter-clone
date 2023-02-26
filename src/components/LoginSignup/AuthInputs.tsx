@@ -15,10 +15,12 @@ const AuthInputs:React.FC<AuthInputsProps> = () => {
     const [modalState,setModalState] = useRecoilState(authModalState)
 
     return (
-        <Flex direction='column' align='center' width='100%' mt={4}>
-            {modalState.view === 'login' && <Login/>}
-            {modalState.view === 'signup' && <Signup/>}
-            {modalState.view === 'create account' && <CreateAccount/>}
+        <Flex justify='center' align='center' width='100%'>
+            <Flex direction='column' align='center' width={{base:'100%', md:'75%'}} mt={4}>
+                {modalState.view === 'login' && <Login/>}
+                {modalState.view === 'signup' && <Signup/>}
+                {modalState.view === 'create account' && <CreateAccount/>}
+            </Flex>
         </Flex>
 
     )
