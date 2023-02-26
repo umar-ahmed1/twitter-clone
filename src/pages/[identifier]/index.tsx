@@ -8,7 +8,7 @@ import { collection,getDocs, query, where } from 'firebase/firestore';
 import { GetServerSidePropsContext } from 'next';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import Header from './Header';
+import Header from '../../components/UserProfile/Header';
 
 type indexProps = {
     userData: UserDetails

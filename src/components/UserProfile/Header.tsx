@@ -41,8 +41,8 @@ const Header:React.FC<HeaderProps> = ({userData}) => {
             </Flex>
             <Stack mb='16px' p='12px 16px 0px 16px'>
                 <Flex direction='column' justify='flex-start'>
-                    <Text fontWeight={600} color='brand.900' fontSize='20px'>{userData.displayName}</Text>
-                    <Text color='brand.700' fontSize='15px'>@{userData.identifier}</Text>
+                    <Text fontWeight={600} color='brand.900' fontSize='20px'>{userData?.displayName}</Text>
+                    <Text color='brand.700' fontSize='15px'>@{userData?.identifier}</Text>
                 </Flex>
                 <Text color='brand.900' fontSize='15px'>About me information</Text>
                 <Flex>
